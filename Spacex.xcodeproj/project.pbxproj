@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		F5CC957B2808568F003A3E8D /* SpacexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC957A2808568F003A3E8D /* SpacexApp.swift */; };
-		F5CC957D2808568F003A3E8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC957C2808568F003A3E8D /* ContentView.swift */; };
+		F5CC957D2808568F003A3E8D /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC957C2808568F003A3E8D /* RocketView.swift */; };
 		F5CC957F28085692003A3E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CC957E28085692003A3E8D /* Assets.xcassets */; };
 		F5CC958228085692003A3E8D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CC958128085692003A3E8D /* Preview Assets.xcassets */; };
+		F5CC95892808574C003A3E8D /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC95882808574C003A3E8D /* Rocket.swift */; };
+		F5CC958B28085A6D003A3E8D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC958A28085A6C003A3E8D /* NetworkManager.swift */; };
+		F5CC958D2809541D003A3E8D /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC958C2809541D003A3E8D /* RocketViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F5CC95772808568F003A3E8D /* Spacex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CC957A2808568F003A3E8D /* SpacexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacexApp.swift; sourceTree = "<group>"; };
-		F5CC957C2808568F003A3E8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F5CC957C2808568F003A3E8D /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
 		F5CC957E28085692003A3E8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5CC958128085692003A3E8D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5CC95882808574C003A3E8D /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		F5CC958A28085A6C003A3E8D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F5CC958C2809541D003A3E8D /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,9 @@
 			isa = PBXGroup;
 			children = (
 				F5CC957A2808568F003A3E8D /* SpacexApp.swift */,
-				F5CC957C2808568F003A3E8D /* ContentView.swift */,
+				F5CC95902809739F003A3E8D /* RocketView */,
+				F5CC958F28097360003A3E8D /* Models */,
+				F5CC958E28097335003A3E8D /* Services */,
 				F5CC957E28085692003A3E8D /* Assets.xcassets */,
 				F5CC958028085692003A3E8D /* Preview Content */,
 			);
@@ -65,6 +73,31 @@
 				F5CC958128085692003A3E8D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5CC958E28097335003A3E8D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F5CC958A28085A6C003A3E8D /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F5CC958F28097360003A3E8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5CC95882808574C003A3E8D /* Rocket.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5CC95902809739F003A3E8D /* RocketView */ = {
+			isa = PBXGroup;
+			children = (
+				F5CC957C2808568F003A3E8D /* RocketView.swift */,
+				F5CC958C2809541D003A3E8D /* RocketViewModel.swift */,
+			);
+			path = RocketView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5CC957D2808568F003A3E8D /* ContentView.swift in Sources */,
+				F5CC958D2809541D003A3E8D /* RocketViewModel.swift in Sources */,
+				F5CC958B28085A6D003A3E8D /* NetworkManager.swift in Sources */,
+				F5CC95892808574C003A3E8D /* Rocket.swift in Sources */,
+				F5CC957D2808568F003A3E8D /* RocketView.swift in Sources */,
 				F5CC957B2808568F003A3E8D /* SpacexApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +313,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,7 +323,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,6 +343,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
