@@ -12,6 +12,8 @@ struct SpacexApp: App {
     var body: some Scene {
         WindowGroup {
             RocketView()
+                .edgesIgnoringSafeArea(.all)
+                .preferredColorScheme(.dark)
         }
     }
 }

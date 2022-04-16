@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RocketView.swift
 //  Spacex
 //
 //  Created by Александра Широкова on 14.04.2022.
@@ -20,10 +20,13 @@ struct RocketView: View {
             Text("Что-то пошло не так...")
                 .font(.title)
         case .loaded:
-            List(viewModel.rockets, id: \.id) { rocket in
-                Text(rocket.name)
+            TabView {
+                ForEach(viewModel.rockets, id: \.id) { rocket in
+                    RocketDetailsView(viewModel: RocketDetailsViewModel(rocket: rocket))
+                }
             }
-            .padding()
+            .tabViewStyle(.page)
+            .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
     }
 }
@@ -31,5 +34,6 @@ struct RocketView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         RocketView()
+            .preferredColorScheme(.dark)
     }
 }
