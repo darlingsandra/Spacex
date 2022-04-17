@@ -9,11 +9,12 @@ import SwiftUI
 
 struct RocketStagesView: View {
     var viewModel: RocketStagesViewModel
+    var title: String
     
     var body: some View {
         VStack(spacing: 16)  {
             HStack {
-                Text("ПЕРВАЯ СТУПЕНЬ")
+                Text(title)
                     .font(.custom("LabGrotesque-Bold", size: 16))
                     .foregroundColor(Color.smokyWhite)
                 Spacer()
@@ -39,7 +40,10 @@ struct RocketStagesView: View {
 
 struct RocketStagesView_Previews: PreviewProvider {
     static var previews: some View {
-        RocketStagesView(viewModel: RocketStagesViewModel(stage: Rocket.getRocketStage()))
-            .preferredColorScheme(.dark)
+        RocketStagesView(
+            viewModel: RocketStagesViewModel(stage: Rocket.getRocketStage()),
+            title: "ПЕРВАЯ СТУПЕНЬ"
+        )
+        .preferredColorScheme(.dark)
     }
 }
