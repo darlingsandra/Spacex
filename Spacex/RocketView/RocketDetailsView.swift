@@ -15,16 +15,20 @@ struct RocketDetailsView: View {
         ZStack(alignment: .top) {
             RocketImageView(imageData: viewModel.imageData)
             ZStack {
-                RoundedRectangle(cornerRadius: 40).foregroundColor(Color.black)
+                Rectangle()
+                    .foregroundColor(Color.black)
+                    .cornerRadius(40, corners: [.topLeft, .topRight])
                 ScrollView {
-                    VStack {
-                        HStack {
-                            Text(viewModel.rocketName)
-                                .font(.title)
-                                .foregroundColor(Color.smokyWhite)
-                                .padding([.bottom, .top])
-                            Spacer()
-                        }
+                    HStack {
+                        Text(viewModel.rocketName)
+                            .font(.title)
+                            .foregroundColor(Color.smokyWhite)
+                            .padding([.bottom, .top])
+                        Spacer()
+                    }.padding([.leading, .trailing], 32)
+                    VStack(spacing: 40) {
+                        ParameterListView(viwModel: viewModel)
+                            .padding(.leading, 32)
                         VStack(spacing: 40) {
                             VStack(spacing: 16) {
                                 RocketDetailsRowView(
@@ -37,7 +41,7 @@ struct RocketDetailsView: View {
                                 )
                                 RocketDetailsRowView(
                                     title: "Стоимость запуска",
-                                    value: String(viewModel.costPerLaunch)
+                                    value: viewModel.costPerLaunch
                                 )
                             }
                             RocketStagesView(viewModel: viewModel.firstStageVM, title: "ПЕРВАЯ СТУПЕНЬ")
@@ -54,14 +58,30 @@ struct RocketDetailsView: View {
                                         .foregroundColor(Color.smokyWhite)
                                 }
                             }
-                        }
+                        }.padding([.leading, .trailing], 32)
                     }
-                    .padding([.leading, .trailing, .top], 32)
                     .padding(.bottom, 80)
                 }
                 .padding(.top)
             }.padding(.top, 248)
        }
+    }
+}
+
+struct RoundedCorner: Shape {
+
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
 

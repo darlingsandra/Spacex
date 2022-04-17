@@ -31,8 +31,8 @@ class RocketDetailsViewModel {
         rocket.country
     }
     
-    var costPerLaunch: Int {
-        rocket.costPerLaunch
+    var costPerLaunch: String {
+        String(rocket.costPerLaunch)
     }
     
     var firstStageVM: RocketStagesViewModel {
@@ -41,6 +41,26 @@ class RocketDetailsViewModel {
     
     var secondStageVM: RocketStagesViewModel {
         RocketStagesViewModel(stage: rocket.secondStage)
+    }
+    
+    var heightFeet: String {
+        String(rocket.height.feet)
+    }
+    
+    var diameterFeet: String {
+        String(rocket.diameter.feet)
+    }
+    
+    var massLb: String {
+        String(rocket.mass.lb)
+    }
+    
+    var payloadWeight: String {
+        let payloads = rocket.payloadWeights.filter { $0.id == "leo" }
+        if let payload = payloads.first {
+            return String(payload.lb)
+        }
+        return "0"
     }
     
     var imageData: Data? {
