@@ -76,3 +76,10 @@ struct PayloadWeights: Decodable {
     let kg: Int
     let lb: Int
 }
+
+enum State {
+    case idle
+    case loading
+    case failed(NetworkError)
+    case loaded
+}

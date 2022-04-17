@@ -20,13 +20,15 @@ struct RocketView: View {
             Text("Что-то пошло не так...")
                 .font(.title)
         case .loaded:
-            TabView {
-                ForEach(viewModel.rockets, id: \.id) { rocket in
-                    RocketDetailsView(viewModel: RocketDetailsViewModel(rocket: rocket))
+            NavigationView {
+                TabView {
+                    ForEach(viewModel.rockets, id: \.id) { rocket in
+                        RocketDetailsView(viewModel: RocketDetailsViewModel(rocket: rocket))
+                    }
                 }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                .navigationBarHidden(true)
             }
-            .tabViewStyle(.page)
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
     }
 }

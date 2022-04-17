@@ -16,11 +16,11 @@ extension Color {
         Color(red: 202/255.0, green: 202/255.0, blue: 202/255.0)
     }
     
-    static var blackBrow: Color {
+    static var blackBrown: Color {
         Color(red: 33/255.0, green: 33/255.0, blue: 33/255.0)
     }
     
     static var greyCrayola: Color {
-        Color(red: 149/255.0, green: 145/255.0, blue: 140/255.0)
+        Color(red: 142/255.0, green: 142/255.0, blue: 143/255.0)
     }
 }

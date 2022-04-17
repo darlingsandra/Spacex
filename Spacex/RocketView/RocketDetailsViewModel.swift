@@ -13,16 +13,17 @@ class RocketDetailsViewModel {
         rocket.name
     }
     
+    var rocketID: String {
+        rocket.id
+    }
+    
     var firstFlight: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'"
         if let date = dateFormatter.date(from: rocket.firstFlight) {
-            print(date)
-            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "d MMMM', 'yyyy"
             return dateFormatter.string(from: date)
         }
-        
         return rocket.firstFlight
     }
     

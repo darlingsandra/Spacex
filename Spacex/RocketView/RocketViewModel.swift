@@ -8,13 +8,6 @@
 import Foundation
 
 class RocketViewModel: ObservableObject {
-    enum State {
-        case idle
-        case loading
-        case failed(NetworkError)
-        case loaded
-    }
-    
     @Published private(set) var rockets: [Rocket] = []
     @Published private(set) var state = State.idle
     

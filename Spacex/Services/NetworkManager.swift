@@ -15,6 +15,7 @@ enum NetworkError: Error {
 
 enum API: String {
     case rocketsURL = "https://api.spacexdata.com/v4/rockets"
+    case launchesURL = "https://api.spacexdata.com/v4/launches"
 }
 
 class NetworkManager {

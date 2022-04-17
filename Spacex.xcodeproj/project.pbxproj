@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F55AF7B0280BE3AD0052614E /* Launche.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55AF7AF280BE3AC0052614E /* Launche.swift */; };
+		F55AF7B2280BE5E50052614E /* LauncheViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55AF7B1280BE5E50052614E /* LauncheViewModel.swift */; };
+		F55AF7B4280BE6020052614E /* LauncheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55AF7B3280BE6020052614E /* LauncheView.swift */; };
+		F55AF7B7280BE99C0052614E /* LauncheDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55AF7B6280BE99C0052614E /* LauncheDetailsView.swift */; };
+		F55AF7B9280BEA350052614E /* LauncheDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55AF7B8280BEA350052614E /* LauncheDetailsViewModel.swift */; };
+		F55AF7BB280C46220052614E /* SuccessImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55AF7BA280C46220052614E /* SuccessImageView.swift */; };
 		F5CC957B2808568F003A3E8D /* SpacexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC957A2808568F003A3E8D /* SpacexApp.swift */; };
 		F5CC957D2808568F003A3E8D /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC957C2808568F003A3E8D /* RocketView.swift */; };
 		F5CC957F28085692003A3E8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5CC957E28085692003A3E8D /* Assets.xcassets */; };
@@ -26,6 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F55AF7AF280BE3AC0052614E /* Launche.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launche.swift; sourceTree = "<group>"; };
+		F55AF7B1280BE5E50052614E /* LauncheViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheViewModel.swift; sourceTree = "<group>"; };
+		F55AF7B3280BE6020052614E /* LauncheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheView.swift; sourceTree = "<group>"; };
+		F55AF7B6280BE99C0052614E /* LauncheDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheDetailsView.swift; sourceTree = "<group>"; };
+		F55AF7B8280BEA350052614E /* LauncheDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheDetailsViewModel.swift; sourceTree = "<group>"; };
+		F55AF7BA280C46220052614E /* SuccessImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessImageView.swift; sourceTree = "<group>"; };
 		F5CC95772808568F003A3E8D /* Spacex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CC957A2808568F003A3E8D /* SpacexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacexApp.swift; sourceTree = "<group>"; };
 		F5CC957C2808568F003A3E8D /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
@@ -56,6 +68,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F55AF7B5280BE60B0052614E /* LauncheView */ = {
+			isa = PBXGroup;
+			children = (
+				F55AF7B1280BE5E50052614E /* LauncheViewModel.swift */,
+				F55AF7B3280BE6020052614E /* LauncheView.swift */,
+				F55AF7B6280BE99C0052614E /* LauncheDetailsView.swift */,
+				F55AF7BA280C46220052614E /* SuccessImageView.swift */,
+				F55AF7B8280BEA350052614E /* LauncheDetailsViewModel.swift */,
+			);
+			path = LauncheView;
+			sourceTree = "<group>";
+		};
 		F5CC956E2808568F003A3E8D = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +101,7 @@
 			children = (
 				F5CC957A2808568F003A3E8D /* SpacexApp.swift */,
 				F5CC95902809739F003A3E8D /* RocketView */,
+				F55AF7B5280BE60B0052614E /* LauncheView */,
 				F5CC958F28097360003A3E8D /* Models */,
 				F5CC958E28097335003A3E8D /* Services */,
 				F5CC95A0280AA3A2003A3E8D /* Colors */,
@@ -107,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				F5CC95882808574C003A3E8D /* Rocket.swift */,
+				F55AF7AF280BE3AC0052614E /* Launche.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,10 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55AF7B9280BEA350052614E /* LauncheDetailsViewModel.swift in Sources */,
 				F5CC95A4280AB1A2003A3E8D /* RocketStagesViewModel.swift in Sources */,
 				F5CC958D2809541D003A3E8D /* RocketViewModel.swift in Sources */,
+				F55AF7B4280BE6020052614E /* LauncheView.swift in Sources */,
+				F55AF7B0280BE3AD0052614E /* Launche.swift in Sources */,
+				F55AF7B7280BE99C0052614E /* LauncheDetailsView.swift in Sources */,
 				F5CC959F280AA398003A3E8D /* Color+Extension.swift in Sources */,
 				F5CC959828099968003A3E8D /* RocketDetailsViewModel.swift in Sources */,
+				F55AF7B2280BE5E50052614E /* LauncheViewModel.swift in Sources */,
 				F5CC958B28085A6D003A3E8D /* NetworkManager.swift in Sources */,
 				F5CC9592280976BC003A3E8D /* RocketImageView.swift in Sources */,
 				F5CC95A6280ABB05003A3E8D /* RocketDetailsRowView.swift in Sources */,
@@ -226,6 +257,7 @@
 				F5CC957D2808568F003A3E8D /* RocketView.swift in Sources */,
 				F5CC957B2808568F003A3E8D /* SpacexApp.swift in Sources */,
 				F5CC959628097D5D003A3E8D /* RocketDetailsView.swift in Sources */,
+				F55AF7BB280C46220052614E /* SuccessImageView.swift in Sources */,
 				F5CC95A2280AB176003A3E8D /* RocketStagesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

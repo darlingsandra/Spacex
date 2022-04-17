@@ -18,6 +18,7 @@ struct RocketImageView: View {
             .aspectRatio(contentMode: .fill)
             .edgesIgnoringSafeArea(.all)
             .frame(width: screenSize.width, height: screenSize.height)
+            .clipShape(Rectangle())
     }
     
     private func getImage(from data: Data?) -> Image {
