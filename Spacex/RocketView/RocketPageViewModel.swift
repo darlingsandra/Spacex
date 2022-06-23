@@ -63,11 +63,6 @@ class RocketPageViewModel {
         return "0"
     }
     
-    var imageData: Data? {
-        guard let imageURL = rocket.flickrImages.first(where: { _ in true }) else { return nil }
-        return NetworkManager.shared.fetchImage(from: imageURL)
-    }
-    
     private let rocket: Rocket
     
     init(rocket: Rocket) {

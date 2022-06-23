@@ -13,7 +13,6 @@ struct RocketPageView: View {
     var body: some View {
         
         ZStack(alignment: .top) {
-            RocketImageView(imageData: viewModel.imageData)
             ZStack {
                 Rectangle()
                     .foregroundColor(Color.black)

@@ -9,7 +9,7 @@ import Foundation
 
 class LauncheViewModel: ObservableObject {
     @Published private(set) var launches: [Launche] = []
-    @Published private(set) var state = State.idle
+    @Published private(set) var state = Status.idle
     
     func getLaunches() {
         state = .loading

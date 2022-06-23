@@ -77,7 +77,7 @@ struct PayloadWeights: Decodable {
     let lb: Int
 }
 
-enum State {
+enum Status {
     case idle
     case loading
     case failed(NetworkError)

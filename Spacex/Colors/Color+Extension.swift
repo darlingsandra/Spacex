@@ -23,4 +23,8 @@ extension Color {
     static var greyCrayola: Color {
         Color(red: 142/255.0, green: 142/255.0, blue: 143/255.0)
     }
+    
+    static var almostBlack: Color {
+        Color(red: 18/255.0, green: 18/255.0, blue: 18/255.0)
+    }
 }

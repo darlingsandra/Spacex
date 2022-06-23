@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RocketView: View {
+    @State var pageIndex = 0
     @StateObject private var viewModel = RocketViewModel()
     
     var body: some View {
@@ -21,14 +22,35 @@ struct RocketView: View {
                    .font(.title)
             case .loaded:
                NavigationView {
-                   TabView {
-                        ForEach(viewModel.pages, id: \.rocketName) { rocketPageVM in
-                            RocketPageView(viewModel: rocketPageVM)
-                        }
+                   ZStack {
+                       RocketImageView(imageData: viewModel.getCurrentRocketImageDate(pageIndex))
+                       TabView(selection: $pageIndex) {
+                           ForEach(Array(viewModel.pages.enumerated()), id: \.offset) { index, rocketPageVM in
+                               ZStack {
+                                   RocketPageView(viewModel: rocketPageVM).tag(index)
+                                   BarTabView()
+                               }
+                               .edgesIgnoringSafeArea(.bottom)
+                           }
+                       }
+                       .navigationBarHidden(true)
+                       .edgesIgnoringSafeArea(.bottom)
+                       .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                    }
-                   .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                   .navigationBarHidden(true)
-            }
+                   .edgesIgnoringSafeArea([.bottom, .top])
+               }
+        }
+    }
+}
+
+struct BarTabView: View {
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            Rectangle()
+                .foregroundColor(.almostBlack)
+                .frame(height: 72)
         }
     }
 }
@@ -36,6 +58,6 @@ struct RocketView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         RocketView()
-            .preferredColorScheme(.dark)
+           .preferredColorScheme(.dark)
     }
 }
