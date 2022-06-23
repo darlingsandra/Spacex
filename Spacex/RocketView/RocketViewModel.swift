@@ -8,7 +8,7 @@
 import Foundation
 
 class RocketViewModel: ObservableObject {
-    @Published private(set) var rockets: [Rocket] = []
+    @Published private(set) var pages: [RocketPageViewModel] = []
     @Published private(set) var state = State.idle
     
     func getRocket() {
@@ -18,7 +18,7 @@ class RocketViewModel: ObservableObject {
             switch result {
             case .success(let rockets):
                 self.state = .loaded
-                self.rockets = rockets
+                rockets.forEach { self.pages.append(RocketPageViewModel(rocket: $0)) }
             case .failure(let error):
                 self.state = .failed(error)
             }

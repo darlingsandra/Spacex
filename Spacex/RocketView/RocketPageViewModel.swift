@@ -1,5 +1,5 @@
 //
-//  RocketDetailsViewModel.swift
+//  RocketPageViewModel.swift
 //  Spacex
 //
 //  Created by Александра Широкова on 15.04.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RocketDetailsViewModel {
+class RocketPageViewModel {
     
     var rocketName: String {
         rocket.name

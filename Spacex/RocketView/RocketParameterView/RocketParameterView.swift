@@ -1,5 +1,5 @@
 //
-//  ParameterRocketView.swift
+//  RocketParameterView.swift
 //  Spacex
 //
 //  Created by Александра Широкова on 17.04.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ParameterRocketView: View {
+struct RocketParameterView: View {
     var title: String
     var value: String
     
@@ -28,9 +28,9 @@ struct ParameterRocketView: View {
     }
 }
 
-struct ParameterRocketView_Previews: PreviewProvider {
+struct RocketParameterView_Previews: PreviewProvider {
     static var previews: some View {
-        ParameterRocketView(title: "Высота, ft", value: "229,6")
+        RocketParameterView(title: "Высота, ft", value: "229,6")
             .preferredColorScheme(.dark)
     }
 }

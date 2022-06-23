@@ -1,5 +1,5 @@
 //
-//  RocketDetailsView.swift
+//  RocketPageView.swift
 //  Spacex
 //
 //  Created by Александра Широкова on 15.04.2022.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct RocketDetailsView: View {
-    var viewModel: RocketDetailsViewModel
+struct RocketPageView: View {
+    var viewModel: RocketPageViewModel
     
     var body: some View {
         
@@ -27,7 +27,7 @@ struct RocketDetailsView: View {
                         Spacer()
                     }.padding([.leading, .trailing], 32)
                     VStack(spacing: 40) {
-                        ParameterListView(viwModel: viewModel)
+                        RocketParameterListView(viwModel: viewModel)
                             .padding(.leading, 32)
                         VStack(spacing: 40) {
                             VStack(spacing: 16) {
@@ -87,7 +87,7 @@ extension View {
 
 struct RocketDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        RocketDetailsView(viewModel: RocketDetailsViewModel(rocket: Rocket.getRocket()))
+        RocketPageView(viewModel: RocketPageViewModel(rocket: Rocket.getRocket()))
             .preferredColorScheme(.dark)
     }
 }
