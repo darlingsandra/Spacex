@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RocketPageView: View {
+    @State private var isPresented = false
     var viewModel: RocketPageViewModel
     
     var body: some View {
@@ -24,6 +25,15 @@ struct RocketPageView: View {
                             .foregroundColor(Color.smokyWhite)
                             .padding([.bottom, .top])
                         Spacer()
+                        Button(action: { isPresented.toggle() }) {
+                            Image(systemName: "gearshape")
+                                .resizable()
+                                .foregroundColor(Color.paleGrey)
+                                .frame(width: 25.71, height: 27.63)
+                        }
+                        .sheet(isPresented: $isPresented) {
+                            SettingsView(isPresented: $isPresented)
+                        }
                     }.padding([.leading, .trailing], 32)
                     VStack(spacing: 40) {
                         RocketParameterListView(viwModel: viewModel)
