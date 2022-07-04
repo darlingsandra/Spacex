@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct SpacexApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             RocketView()
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)  
                 .preferredColorScheme(.dark)
         }
     }
 }
+
+

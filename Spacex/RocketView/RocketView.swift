@@ -14,12 +14,17 @@ struct RocketView: View {
     var body: some View {
         switch viewModel.state {
             case .idle:
-               Color.clear.onAppear(perform: viewModel.getRocket)
+                Color.clear.onAppear(perform: viewModel.getRocket)
             case .loading:
-                ProgressView("Загрузка...")
+            ProgressView {
+                Text("Загрузка...")
+                    .edgesIgnoringSafeArea(.all)
+                    .font(.title)
+            }
             case .failed(_):
-               Text("Что-то пошло не так...")
-                   .font(.title)
+                Text("Что-то пошло не так...")
+                    .edgesIgnoringSafeArea(.all)
+                    .font(.title)
             case .loaded:
                NavigationView {
                    ZStack {
