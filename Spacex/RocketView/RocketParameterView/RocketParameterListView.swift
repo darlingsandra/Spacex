@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct RocketParameterListView: View {
-    var viwModel: RocketPageViewModel
+    var viewModel: RocketPageViewModel
     
+    @AppStorage(StorageKeys.unitHeight.rawValue) private var height: MeasureUnit = .ft
+    @AppStorage(StorageKeys.unitDiameter.rawValue) private var diameter: MeasureUnit = .ft
+    @AppStorage(StorageKeys.unitMass.rawValue) private var mass: MeasureUnit = .kg
+    @AppStorage(StorageKeys.unitPayloadWeights.rawValue) private var payloadWeights: MeasureUnit = .lb
+        
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 12) {
-                RocketParameterView(title: "Высота, ft", value: viwModel.heightFeet)
-                RocketParameterView(title: "Диаметр, ft", value: viwModel.diameterFeet)
-                RocketParameterView(title: "Масса, lb", value: viwModel.massLb)
-                RocketParameterView(title: "Нагрузка, lb", value: viwModel.payloadWeight)
+                RocketParameterView(
+                    title: viewModel.getHeightTitle(for: height),
+                    value: viewModel.getHeightValue(for: height)
+                )
+                RocketParameterView(
+                    title: viewModel.getDiameterTitle(for: diameter),
+                    value: viewModel.getDiameterValue(for: diameter)
+                )
+                RocketParameterView(
+                    title: viewModel.getMassTitle(for: mass),
+                    value: viewModel.getMassValue(for: mass)
+                )
+                RocketParameterView(
+                    title: viewModel.getPayloadWeightTitle(for: payloadWeights),
+                    value: viewModel.getPayloadWeightValue(for: payloadWeights)
+                )
             }
         }
     }
@@ -24,7 +41,7 @@ struct RocketParameterListView: View {
 
 struct RocketParameterListView_Previews: PreviewProvider {
     static var previews: some View {
-        RocketParameterListView(viwModel: RocketPageViewModel(rocket: Rocket.getRocket()))
+        RocketParameterListView(viewModel: RocketPageViewModel(rocket: Rocket.getRocket()))
             .preferredColorScheme(.dark)
     }
 }

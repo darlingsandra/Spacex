@@ -5,7 +5,7 @@
 //  Created by Александра Широкова on 15.04.2022.
 //
 
-import Foundation
+import SwiftUI
 
 class RocketPageViewModel {
     
@@ -43,29 +43,57 @@ class RocketPageViewModel {
         RocketStagesViewModel(stage: rocket.secondStage)
     }
     
-    var heightFeet: String {
-        String(rocket.height.feet)
-    }
-    
-    var diameterFeet: String {
-        String(rocket.diameter.feet)
-    }
-    
-    var massLb: String {
-        String(rocket.mass.lb)
-    }
-    
-    var payloadWeight: String {
-        let payloads = rocket.payloadWeights.filter { $0.id == "leo" }
-        if let payload = payloads.first {
-            return String(payload.lb)
-        }
-        return "0"
-    }
-    
     private let rocket: Rocket
     
     init(rocket: Rocket) {
         self.rocket = rocket
+    }
+    
+    func getHeightTitle(for setting: MeasureUnit) -> String {
+        "Высота, \(setting.rawValue)"
+    }
+    
+    func getHeightValue(for setting: MeasureUnit) -> String {
+        let heightValue = setting == MeasureUnit.m ? rocket.height.meters : rocket.height.feet
+        return String(heightValue)
+    }
+    
+    func getDiameterTitle(for setting: MeasureUnit) -> String {
+        "Диаметр, \(setting.rawValue)"
+    }
+    
+    func getDiameterValue(for setting: MeasureUnit) -> String {
+        let diameterValue = setting == MeasureUnit.m ? rocket.diameter.meters : rocket.diameter.feet
+        return String(diameterValue)
+    }
+    
+    func getMassTitle(for setting: MeasureUnit) -> String {
+        "Масса, \(setting.rawValue)"
+    }
+    
+    func getMassValue(for setting: MeasureUnit) -> String {
+        let massValue = setting == MeasureUnit.kg ? rocket.mass.kg : rocket.mass.lb
+        return formatNumber(Int(massValue))
+    }
+    
+    func getPayloadWeightTitle(for setting: MeasureUnit) -> String {
+        "Нагрузка, \(setting.rawValue)"
+    }
+    
+    func getPayloadWeightValue(for setting: MeasureUnit) -> String {
+        let payloads = rocket.payloadWeights.filter { $0.id == "leo" }
+        if let payload = payloads.first {
+            let payloadWeightValue = setting == MeasureUnit.kg ? payload.kg : payload.lb
+            return formatNumber(payloadWeightValue)
+        }
+        return "0"
+    }
+    
+    private func formatNumber(_ number: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = ","
+        let nsNumber = NSNumber(value: number)
+        return formatter.string(from: nsNumber) ?? ""
     }
 }

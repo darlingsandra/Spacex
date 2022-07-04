@@ -36,7 +36,7 @@ struct RocketPageView: View {
                         }
                     }.padding([.leading, .trailing], 32)
                     VStack(spacing: 40) {
-                        RocketParameterListView(viwModel: viewModel)
+                        RocketParameterListView(viewModel: viewModel)
                             .padding(.leading, 32)
                         VStack(spacing: 40) {
                             VStack(spacing: 16) {
