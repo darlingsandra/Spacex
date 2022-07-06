@@ -21,17 +21,17 @@ struct RocketStagesView: View {
             }
             RocketDetailsRowView(
                 title: "Количество двигателей",
-                value: String(viewModel.engines),
+                value: viewModel.engines,
                 unit: ""
             )
             RocketDetailsRowView(
                 title: "Количество топлива",
-                value: String(viewModel.fuelAmountTons),
+                value: viewModel.fuelAmountTons,
                 unit: "ton"
             )
             RocketDetailsRowView(
                 title: "Время сгарания",
-                value: String(viewModel.burnTimeSec),
+                value: viewModel.burnTimeSec,
                 unit: "sec"
             )
         }

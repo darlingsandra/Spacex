@@ -32,7 +32,28 @@ class RocketPageViewModel {
     }
     
     var costPerLaunch: String {
-        String(rocket.costPerLaunch)
+        var costPerLaunch = rocket.costPerLaunch
+        var unit = ""
+        
+        switch rocket.costPerLaunch {
+        case let number where number >= 1000000000:
+            costPerLaunch = number / 1000000000; unit = "млрд"
+        case let number where number >= 1000000:
+            costPerLaunch = number / 1000000; unit = "млн"
+        case let number where number >= 1000:
+            costPerLaunch = number / 1000; unit = "тыс"
+        default:
+            costPerLaunch = rocket.costPerLaunch; unit = ""
+        }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.currencyCode = "USD"
+        formatter.maximumFractionDigits = 0
+        let costPerLaunchString = formatter.string(from: NSNumber(value: costPerLaunch)) ?? ""
+
+        return "\(costPerLaunchString) \(unit)"
     }
     
     var firstStageVM: RocketStagesViewModel {
@@ -73,7 +94,7 @@ class RocketPageViewModel {
     
     func getMassValue(for setting: MeasureUnit) -> String {
         let massValue = setting == MeasureUnit.kg ? rocket.mass.kg : rocket.mass.lb
-        return formatNumber(Int(massValue))
+        return massValue.formatNumber()
     }
     
     func getPayloadWeightTitle(for setting: MeasureUnit) -> String {
@@ -84,16 +105,9 @@ class RocketPageViewModel {
         let payloads = rocket.payloadWeights.filter { $0.id == "leo" }
         if let payload = payloads.first {
             let payloadWeightValue = setting == MeasureUnit.kg ? payload.kg : payload.lb
-            return formatNumber(payloadWeightValue)
+            return payloadWeightValue.formatNumber()
         }
         return "0"
     }
-    
-    private func formatNumber(_ number: Int) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = ","
-        let nsNumber = NSNumber(value: number)
-        return formatter.string(from: nsNumber) ?? ""
-    }
 }
+

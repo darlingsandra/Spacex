@@ -17,6 +17,7 @@
 		F55AF7BF280C4D610052614E /* RocketParameterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55AF7BE280C4D610052614E /* RocketParameterListView.swift */; };
 		F569A48B28729AE8002BA3DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F569A48A28729AE8002BA3DC /* AppDelegate.swift */; };
 		F571BEED286568B7000A5CE0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F571BEEC286568B7000A5CE0 /* SettingsView.swift */; };
+		F58DC6572873FDA60043BC80 /* CustomFormatNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58DC6562873FDA60043BC80 /* CustomFormatNumber.swift */; };
 		F5BE63292869A05B00467A13 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BE63282869A05B00467A13 /* SettingsRowView.swift */; };
 		F5CC957B2808568F003A3E8D /* SpacexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC957A2808568F003A3E8D /* SpacexApp.swift */; };
 		F5CC957D2808568F003A3E8D /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC957C2808568F003A3E8D /* RocketView.swift */; };
@@ -47,6 +48,7 @@
 		F55AF7BE280C4D610052614E /* RocketParameterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketParameterListView.swift; sourceTree = "<group>"; };
 		F569A48A28729AE8002BA3DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F571BEEC286568B7000A5CE0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F58DC6562873FDA60043BC80 /* CustomFormatNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormatNumber.swift; sourceTree = "<group>"; };
 		F5BE63282869A05B00467A13 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		F5CC95772808568F003A3E8D /* Spacex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CC957A2808568F003A3E8D /* SpacexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacexApp.swift; sourceTree = "<group>"; };
@@ -144,18 +146,10 @@
 				F5CC958E28097335003A3E8D /* Services */,
 				F5CC95A0280AA3A2003A3E8D /* Colors */,
 				F5CC959B280A93A4003A3E8D /* Fonts */,
-				F5CC958028085692003A3E8D /* Preview Content */,
-				F5CC957E28085692003A3E8D /* Assets.xcassets */,
+				F5F97C6E2875678200A67513 /* Helpers */,
+				F5F97C6D2875670C00A67513 /* Resources */,
 			);
 			path = Spacex;
-			sourceTree = "<group>";
-		};
-		F5CC958028085692003A3E8D /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F5CC958128085692003A3E8D /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F5CC958E28097335003A3E8D /* Services */ = {
@@ -206,6 +200,23 @@
 				F5CC959E280AA398003A3E8D /* Color+Extension.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		F5F97C6D2875670C00A67513 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5CC957E28085692003A3E8D /* Assets.xcassets */,
+				F5CC958128085692003A3E8D /* Preview Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F5F97C6E2875678200A67513 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F58DC6562873FDA60043BC80 /* CustomFormatNumber.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				F5CC95892808574C003A3E8D /* Rocket.swift in Sources */,
 				F5CC957D2808568F003A3E8D /* RocketView.swift in Sources */,
 				F571BEED286568B7000A5CE0 /* SettingsView.swift in Sources */,
+				F58DC6572873FDA60043BC80 /* CustomFormatNumber.swift in Sources */,
 				F5CC957B2808568F003A3E8D /* SpacexApp.swift in Sources */,
 				F5CC959628097D5D003A3E8D /* RocketPageView.swift in Sources */,
 				F55AF7BB280C46220052614E /* SuccessImageView.swift in Sources */,

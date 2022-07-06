@@ -9,16 +9,17 @@ import Foundation
 
 class RocketStagesViewModel {
     
-    var engines: Int {
-        stage.engines
+    var engines: String {
+        String(stage.engines)
     }
     
-    var fuelAmountTons: Double {
-        stage.fuelAmountTons
+    var fuelAmountTons: String {
+        stage.fuelAmountTons.formatNumber(minimumFractionDigits: 1, decimalSeparator: ",", groupingSeparator: " ")
     }
     
-    var burnTimeSec: Int {
-        stage.burnTimeSec ?? 0
+    var burnTimeSec: String {
+        guard let burnTimeSec = stage.burnTimeSec else { return "" }
+        return String(burnTimeSec)
     }
     
     private let stage: Stage
