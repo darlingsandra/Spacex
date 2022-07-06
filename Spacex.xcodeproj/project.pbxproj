@@ -148,6 +148,7 @@
 				F5CC959B280A93A4003A3E8D /* Fonts */,
 				F5F97C6E2875678200A67513 /* Helpers */,
 				F5F97C6D2875670C00A67513 /* Resources */,
+				F5F97C702875835100A67513 /* Preview Content */,
 			);
 			path = Spacex;
 			sourceTree = "<group>";
@@ -206,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				F5CC957E28085692003A3E8D /* Assets.xcassets */,
-				F5CC958128085692003A3E8D /* Preview Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -217,6 +217,14 @@
 				F58DC6562873FDA60043BC80 /* CustomFormatNumber.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F5F97C702875835100A67513 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F5CC958128085692003A3E8D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
