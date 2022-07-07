@@ -16,15 +16,18 @@ struct LauncheView: View {
     var body: some View {
         switch viewModel.state {
         case .idle:
-            Color.clear.onAppear(perform: viewModel.getLaunches)
+            Color.clear.onAppear { viewModel.getLaunches(for: rocketID) }
         case .loading:
-            ProgressView("Загрузка...")
+            ProgressView {
+                Text("Загрузка...")
+                    .font(.title)
+            }
         case .failed(_):
             Text("Что-то пошло не так...")
                 .font(.title)
         case .loaded:
-            List(viewModel.launches.filter{ $0.rocket == rocketID }, id: \.id) { launche in
-                LauncheDetailsView(viewModel: LauncheDetailsViewModel(launche: launche))
+            List(viewModel.rows, id: \.launcheID) { launcheVM in
+                LauncheDetailsView(viewModel: launcheVM)
             }
             .listStyle(.plain)
             .navigationBarTitle(rocketName, displayMode: .inline)

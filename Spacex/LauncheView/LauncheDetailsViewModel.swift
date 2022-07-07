@@ -17,6 +17,14 @@ class LauncheDetailsViewModel {
         launche.success ?? false
     }
     
+    var rocketID: String {
+        launche.rocket
+    }
+    
+    var launcheID: String {
+        launche.id
+    }
+    
     var launcheDate: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
